@@ -34,7 +34,7 @@ export default function SharingPage() {
           </Button>
         </ShareDialog>
       </PageHeader>
-      <div className="grid gap-8">
+      <div className="grid gap-6">
         <Card className="bg-accent/10 border-accent/20">
             <CardHeader>
                 <CardTitle className='flex items-center gap-2'>
@@ -66,8 +66,8 @@ export default function SharingPage() {
                 <TableHeader>
                   <TableRow>
                     <TableHead>Requester</TableHead>
-                    <TableHead className="hidden md:table-cell">Record Accessed</TableHead>
-                    <TableHead className="hidden sm:table-cell">Date</TableHead>
+                    <TableHead className="hidden sm:table-cell">Record</TableHead>
+                    <TableHead className="hidden md:table-cell">Date</TableHead>
                     <TableHead>Status</TableHead>
                     <TableHead className="text-right">Action</TableHead>
                   </TableRow>
@@ -83,8 +83,8 @@ export default function SharingPage() {
                           </span>
                         </div>
                       </TableCell>
-                      <TableCell className="hidden md:table-cell">{log.record}</TableCell>
-                      <TableCell className="hidden sm:table-cell">{log.date}</TableCell>
+                      <TableCell className="hidden sm:table-cell">{log.record}</TableCell>
+                      <TableCell className="hidden md:table-cell">{log.date}</TableCell>
                       <TableCell>
                         <Badge
                           variant={

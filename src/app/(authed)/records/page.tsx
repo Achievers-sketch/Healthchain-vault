@@ -70,7 +70,7 @@ export default function RecordsPage() {
                 <TableRow>
                   <TableHead>Name</TableHead>
                   <TableHead className="w-[100px] hidden sm:table-cell">Type</TableHead>
-                  <TableHead className="w-[150px] hidden md:table-cell">Date Uploaded</TableHead>
+                  <TableHead className="w-[150px] hidden md:table-cell">Date</TableHead>
                   <TableHead className="w-[100px] hidden lg:table-cell">Size</TableHead>
                   <TableHead className="w-[50px] text-right">Actions</TableHead>
                 </TableRow>
