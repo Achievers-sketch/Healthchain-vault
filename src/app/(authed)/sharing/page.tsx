@@ -61,52 +61,54 @@ export default function SharingPage() {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Table>
-              <TableHeader>
-                <TableRow>
-                  <TableHead>Requester</TableHead>
-                  <TableHead>Record Accessed</TableHead>
-                  <TableHead>Date</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead className="text-right">Action</TableHead>
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {accessLogs.map((log) => (
-                  <TableRow key={log.id}>
-                    <TableCell className="font-medium">
-                      <div className="flex flex-col">
-                        <span>{log.requester}</span>
-                        <span className="text-xs text-muted-foreground">
-                          {log.requesterType}
-                        </span>
-                      </div>
-                    </TableCell>
-                    <TableCell>{log.record}</TableCell>
-                    <TableCell>{log.date}</TableCell>
-                    <TableCell>
-                      <Badge
-                        variant={
-                          log.status === 'Granted' ? 'secondary' : 'destructive'
-                        }
-                        className={
-                            log.status === 'Granted' ? 'bg-green-100 text-green-800' : ''
-                        }
-                      >
-                        {log.status}
-                      </Badge>
-                    </TableCell>
-                    <TableCell className="text-right">
-                      {log.status === 'Granted' && (
-                        <Button variant="link" className="h-auto p-0 text-destructive">
-                          Revoke
-                        </Button>
-                      )}
-                    </TableCell>
+            <div className="overflow-x-auto">
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Requester</TableHead>
+                    <TableHead className="hidden md:table-cell">Record Accessed</TableHead>
+                    <TableHead className="hidden sm:table-cell">Date</TableHead>
+                    <TableHead>Status</TableHead>
+                    <TableHead className="text-right">Action</TableHead>
                   </TableRow>
-                ))}
-              </TableBody>
-            </Table>
+                </TableHeader>
+                <TableBody>
+                  {accessLogs.map((log) => (
+                    <TableRow key={log.id}>
+                      <TableCell className="font-medium">
+                        <div className="flex flex-col">
+                          <span>{log.requester}</span>
+                          <span className="text-xs text-muted-foreground">
+                            {log.requesterType}
+                          </span>
+                        </div>
+                      </TableCell>
+                      <TableCell className="hidden md:table-cell">{log.record}</TableCell>
+                      <TableCell className="hidden sm:table-cell">{log.date}</TableCell>
+                      <TableCell>
+                        <Badge
+                          variant={
+                            log.status === 'Granted' ? 'secondary' : 'destructive'
+                          }
+                          className={
+                              log.status === 'Granted' ? 'bg-green-100 text-green-800' : ''
+                          }
+                        >
+                          {log.status}
+                        </Badge>
+                      </TableCell>
+                      <TableCell className="text-right">
+                        {log.status === 'Granted' && (
+                          <Button variant="link" className="h-auto p-0 text-destructive">
+                            Revoke
+                          </Button>
+                        )}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
           </CardContent>
         </Card>
       </div>

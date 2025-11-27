@@ -46,7 +46,7 @@ export default function EmergencyPage() {
         <CardContent className="text-center">
           {showQr ? (
             <div className="space-y-4">
-              <div className="mx-auto w-64 h-64 p-4 border rounded-lg bg-white">
+              <div className="mx-auto w-full max-w-64 h-auto p-4 border rounded-lg bg-white">
                 <QrCodeSvg />
               </div>
               <p className="text-muted-foreground">
