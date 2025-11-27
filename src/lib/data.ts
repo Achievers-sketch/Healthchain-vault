@@ -12,45 +12,52 @@ export type Record = {
 export const records: Record[] = [
   {
     id: 'REC001',
-    name: 'Annual Check-up Results',
+    name: 'Annual Physical Exam Results',
     type: 'PDF',
-    date: '2023-10-15',
-    size: '1.2 MB',
+    date: '2024-05-20',
+    size: '1.5 MB',
   },
   {
     id: 'REC002',
-    name: 'MRI Scan - Left Knee',
+    name: 'X-Ray: Right Arm',
     type: 'Image',
-    date: '2023-09-22',
-    size: '15.8 MB',
+    date: '2024-04-12',
+    size: '8.2 MB',
   },
   {
     id: 'REC003',
-    name: 'Blood Test Panel',
+    name: 'Allergy Test Panel',
     type: 'JSON',
-    date: '2023-10-14',
-    size: '50 KB',
+    date: '2024-05-15',
+    size: '75 KB',
   },
   {
     id: 'REC004',
-    name: 'Genomic Sequence Data',
+    name: 'Full Genome Sequence',
     type: 'Genome',
-    date: '2023-08-01',
-    size: '1.1 GB',
+    date: '2024-01-10',
+    size: '2.3 GB',
   },
   {
     id: 'REC005',
-    name: 'Prescription - Amoxicillin',
+    name: 'Prescription: Metformin',
     type: 'PDF',
-    date: '2023-11-02',
-    size: '300 KB',
+    date: '2024-05-21',
+    size: '250 KB',
+  },
+  {
+    id: 'REC006',
+    name: 'Dental Check-up & Cleaning',
+    type: 'PDF',
+    date: '2024-03-05',
+    size: '780 KB',
   },
 ];
 
 export type AccessLog = {
   id: string;
   requester: string;
-  requesterType: 'Hospital' | 'Clinic' | 'Research';
+  requesterType: 'Hospital' | 'Clinic' | 'Research' | 'Pharmacy';
   record: string;
   date: string;
   status: 'Granted' | 'Revoked';
@@ -59,26 +66,42 @@ export type AccessLog = {
 export const accessLogs: AccessLog[] = [
   {
     id: 'LOG001',
-    requester: 'General Hospital',
+    requester: 'St. Jude Medical Center',
     requesterType: 'Hospital',
-    record: 'Annual Check-up Results',
-    date: '2023-11-01',
+    record: 'Annual Physical Exam Results',
+    date: '2024-05-22',
     status: 'Granted',
   },
   {
     id: 'LOG002',
-    requester: 'Cardio Clinic',
+    requester: 'Downtown Dermatology Clinic',
     requesterType: 'Clinic',
-    record: 'Blood Test Panel',
-    date: '2023-10-20',
+    record: 'Allergy Test Panel',
+    date: '2024-05-16',
     status: 'Granted',
   },
   {
     id: 'LOG003',
-    requester: 'Bio-Future Research',
+    requester: 'Veridian Dynamics Research',
     requesterType: 'Research',
-    record: 'Genomic Sequence Data (Anonymized)',
-    date: '2023-09-05',
+    record: 'Full Genome Sequence (Anonymized)',
+    date: '2024-03-15',
+    status: 'Revoked',
+  },
+  {
+    id: 'LOG004',
+    requester: 'Community Pharmacy',
+    requesterType: 'Pharmacy',
+    record: 'Prescription: Metformin',
+    date: '2024-05-21',
+    status: 'Granted',
+  },
+    {
+    id: 'LOG005',
+    requester: 'St. Jude Medical Center',
+    requesterType: 'Hospital',
+    record: 'X-Ray: Right Arm',
+    date: '2024-04-13',
     status: 'Revoked',
   },
 ];
@@ -104,7 +127,7 @@ export const integrations: Integration[] = [
     name: 'Fitbit',
     description: 'Import your activity, sleep, and heart rate data.',
     icon: HeartPulse,
-    connected: false,
+    connected: true,
   },
   {
     id: 'INT003',
